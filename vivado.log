@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Oct  8 18:41:32 2026
-# Process ID         : 29920
+# Start of session at: Thu Oct  8 19:01:50 2026
+# Process ID         : 31272
 # Current directory  : D:/makeathon
 # Command line       : vivado.exe -mode batch -source scripts\flash_fpga.tcl
 # Log file           : D:/makeathon/vivado.log
@@ -17,9 +17,9 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 12
 # Host memory        : 16873 MB
-# Swap memory        : 9950 MB
-# Total Virtual      : 26824 MB
-# Available Virtual  : 5328 MB
+# Swap memory        : 9686 MB
+# Total Virtual      : 26559 MB
+# Available Virtual  : 5247 MB
 #-----------------------------------------------------------
 source {scripts\flash_fpga.tcl}
 # set ROOT_DIR [file normalize [file join [file dirname [info script]] ".."]]
@@ -78,7 +78,7 @@ INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/88
 --> Selected Target Device: xc7s50_0
 # current_hw_device $dev
 # refresh_hw_device -update_hw_probes false $dev
-INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+INFO: [Labtools 27-1435] Device xc7s50 (JTAG device index = 0) is not programmed (DONE status = 0).
 # puts "--> Programming Bitstream: $BIT_FILE"
 --> Programming Bitstream: D:/makeathon/picorv32_top.bit
 # set_property PROGRAM.FILE $BIT_FILE $dev
@@ -97,4 +97,4 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/8872382502DCA
 # disconnect_hw_server
 # close_hw_manager
-INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 18:41:41 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 19:01:59 2026...
