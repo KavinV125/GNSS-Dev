@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct  8 18:32:32 2026
+# Process ID         : 11888
+# Current directory  : D:/makeathon
+# Command line       : vivado.exe -mode batch -source scripts\flash_fpga.tcl
+# Log file           : D:/makeathon/vivado.log
+# Journal file       : D:/makeathon\vivado.jou
+# Running On         : LAPTOP-UT1BGRQV
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450HX
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 9950 MB
+# Total Virtual      : 26824 MB
+# Available Virtual  : 5364 MB
+#-----------------------------------------------------------
+source {scripts\flash_fpga.tcl}

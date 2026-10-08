@@ -1,0 +1,51 @@
+
+firmware.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00010117          	auipc	sp,0x10
+   4:	00010113          	mv	sp,sp
+   8:	00000297          	auipc	t0,0x0
+   c:	07c28293          	addi	t0,t0,124 # 84 <_etext>
+  10:	00000317          	auipc	t1,0x0
+  14:	07430313          	addi	t1,t1,116 # 84 <_etext>
+
+00000018 <zero_bss_loop>:
+  18:	0062f863          	bgeu	t0,t1,28 <zero_bss_done>
+  1c:	0002a023          	sw	zero,0(t0)
+  20:	00428293          	addi	t0,t0,4
+  24:	ff5ff06f          	j	18 <zero_bss_loop>
+
+00000028 <zero_bss_done>:
+  28:	00000097          	auipc	ra,0x0
+  2c:	00c080e7          	jalr	12(ra) # 34 <main>
+
+00000030 <hang>:
+  30:	0000006f          	j	30 <hang>
+
+00000034 <main>:
+  34:	00000637          	lui	a2,0x0
+  38:	07460613          	addi	a2,a2,116 # 74 <main+0x40>
+  3c:	020006b7          	lui	a3,0x2000
+  40:	06800713          	li	a4,104
+  44:	00060793          	mv	a5,a2
+  48:	00178793          	addi	a5,a5,1
+  4c:	00e6a023          	sw	a4,0(a3) # 2000000 <_stack_top+0x1ff0000>
+  50:	0007c703          	lbu	a4,0(a5)
+  54:	fe071ae3          	bnez	a4,48 <main+0x14>
+  58:	001e87b7          	lui	a5,0x1e8
+  5c:	47f78793          	addi	a5,a5,1151 # 1e847f <_stack_top+0x1d847f>
+  60:	00000013          	nop
+  64:	00078713          	mv	a4,a5
+  68:	fff78793          	addi	a5,a5,-1
+  6c:	fe071ae3          	bnez	a4,60 <main+0x2c>
+  70:	fd1ff06f          	j	40 <main+0xc>
+  74:	6568                	.insn	2, 0x6568
+  76:	6c6c                	.insn	2, 0x6c6c
+  78:	696c206f          	j	c270e <_stack_top+0xb270e>
+  7c:	676e                	.insn	2, 0x676e
+  7e:	7365                	.insn	2, 0x7365
+  80:	0d68                	.insn	2, 0x0d68
+  82:	000a                	.insn	2, 0x000a

@@ -1,0 +1,100 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct  8 18:34:21 2026
+# Process ID         : 32584
+# Current directory  : D:/makeathon
+# Command line       : vivado.exe -mode batch -source scripts\flash_fpga.tcl
+# Log file           : D:/makeathon/vivado.log
+# Journal file       : D:/makeathon\vivado.jou
+# Running On         : LAPTOP-UT1BGRQV
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450HX
+# CPU Frequency      : 2688 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 9950 MB
+# Total Virtual      : 26824 MB
+# Available Virtual  : 5346 MB
+#-----------------------------------------------------------
+source {scripts\flash_fpga.tcl}
+# set ROOT_DIR [file normalize [file join [file dirname [info script]] ".."]]
+# set BIT_FILE [file join $ROOT_DIR "picorv32_top.bit"]
+# if {![file exists $BIT_FILE]} {
+#     puts "Error: Bitstream file '$BIT_FILE' not found!"
+#     exit 1
+# }
+# puts "=================================================="
+==================================================
+# puts " Connecting to Hardware Server & Programming FPGA "
+ Connecting to Hardware Server & Programming FPGA 
+# puts "=================================================="
+==================================================
+# open_hw_manager
+# if {[catch {connect_hw_server -allow_non_jtag} err]} {
+#     puts "Warning: connect_hw_server notice: $err"
+# }
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 14 2025-00:45:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# if {[catch {open_hw_target} err]} {
+#     puts "Error: Unable to open hardware target. Is the FPGA plugged in and turned on?"
+#     puts "$err"
+#     close_hw_manager
+#     exit 1
+# }
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/8872382502DCA
+# set targets [get_hw_devices]
+# if {[llength $targets] == 0} {
+#     puts "Error: No JTAG hardware devices detected!"
+#     close_hw_target
+#     disconnect_hw_server
+#     close_hw_manager
+#     exit 1
+# }
+# set dev [lindex $targets 0]
+# foreach d $targets {
+#     if {[string match -nocase "*xc7s*" $d] || [string match -nocase "*xc7a*" $d] || [string match -nocase "*xc7z*" $d] || [string match -nocase "*xcku*" $d]} {
+#         set dev $d
+#         break
+#     }
+# }
+# puts "--> Selected Target Device: $dev"
+--> Selected Target Device: xc7s50_0
+# current_hw_device $dev
+# refresh_hw_device -update_hw_probes false $dev
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# puts "--> Programming Bitstream: $BIT_FILE"
+--> Programming Bitstream: D:/makeathon/picorv32_top.bit
+# set_property PROGRAM.FILE $BIT_FILE $dev
+# program_hw_devices $dev
+INFO: [Labtools 27-3164] End of startup status: HIGH
+# puts "\n=================================================="
+
+==================================================
+# puts " FPGA PROGRAMMING SUCCESSFUL! "
+ FPGA PROGRAMMING SUCCESSFUL! 
+# puts " Check PuTTY for: hello lingesh"
+ Check PuTTY for: hello lingesh
+# puts "=================================================="
+==================================================
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/8872382502DCA
+# disconnect_hw_server
+# close_hw_manager
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 18:34:31 2026...
